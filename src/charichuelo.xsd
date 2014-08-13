@@ -120,6 +120,7 @@
           <xsd:field xpath="cor_order_id" />
         </xsd:key>
       </xsd:element>
+      
       <xsd:element
         name="cor_customer_id"
         type="xsd:int"
