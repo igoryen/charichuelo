@@ -229,8 +229,7 @@
     <xsd:sequence>
       <xsd:element
         name="prd_product_id"
-        type="xsd:int"
-        maxOccurs="unbounded">
+        type="xsd:int">
         <xsd:key
           id="prd_product_id_key"
           name="prd_product_id_key">
