@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:jxb="http://java.sun.com/xml/ns/jaxb"
+  jxb:version="2.0"
+  xmlns:tns="http://www.example.org/cawesh"
+  elementFormDefault="qualified">
+
+  <!-- CustomerSearch (Request) -->
+
+  <xsd:element
+    name="customerSearchRequest"
+    type="CustomerSearchRequest" />
+
+  <xsd:complexType name="CustomerSearchRequest">
+
+    <xsd:sequence>
+
+      <xsd:element
+        name="cst_customer_id"
+        type="xsd:int">
+        <xsd:key
+          id="cst_customer_id_key"
+          name="cst_customer_id_key">
+          <xsd:selector xpath=".//tbl_customers" />
+          <xsd:field xpath="cst_customer_id" />
+        </xsd:key>
+      </xsd:element>
+
+      <xsd:element
+        name="cst_first_name"
+        type="xsd:string"
+        maxOccurs="unbounded" />
+
+      <xsd:element
+        name="cst_middle_name"
+        type="xsd:string"
+        minOccurs="0"
+        maxOccurs="unbounded" />
+
+      <xsd:element
+        name="cst_last_name"
+        type="xsd:string"
+        maxOccurs="unbounded" />
+
+      <xsd:element
+        name="cst_customer_phone"
+        type="xsd:string"
+        minOccurs="0"
+        maxOccurs="unbounded" />
+
+      <xsd:element
+        name="cst_customer_email"
+        type="xsd:string"
+        minOccurs="0"
+        maxOccurs="unbounded" />
+
+      <xsd:element
+        name="cst_other_customer_details"
+        type="xsd:string"
+        minOccurs="0"
+        maxOccurs="unbounded" />
+
+    </xsd:sequence>
+
+  </xsd:complexType>
+
+  <!-- CustomerSearch (Response) -->
+
+  <xsd:element
+    name="customerSearchResponse"
+    type="CustomerSearchResponse" />
+
+  <xsd:complexType name="CustomerSearchResponse">
+
+    <xsd:sequence>
+
+      <xsd:element
+        name="cst_customer_id"
+        type="xsd:int" />
+      <xsd:element
+        name="cst_first_name"
+        type="xsd:string" />
+      <xsd:element
+        name="cst_middle_name"
+        type="xsd:string" />
+      <xsd:element
+        name="cst_last_name"
+        type="xsd:string" />
+      <xsd:element
+        name="cst_customer_phone"
+        type="xsd:string" />
+      <xsd:element
+        name="cst_customer_email"
+        type="xsd:string" />
+      <xsd:element
+        name="cst_other_customer_details"
+        type="xsd:string" />
+
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <!-- CustomerOrderSearch (Request) -->
+
+  <xsd:element
+    name="customerOrderSearchRequest"
+    type="CustomerOrderSearchRequest" />
+
+  <xsd:complexType name="CustomerOrderSearchRequest">
+
+    <xsd:sequence>
+      <xsd:element
+        name="cor_order_id"
+        type="xsd:int"
+        maxOccurs="unbounded">
+        <xsd:key
+          id="cor_customer_orders_key"
+          name="cor_customer_orders_key">
+          <xsd:selector xpath=".//tbl_customer_orders" />
+          <xsd:field xpath="cor_order_id" />
+        </xsd:key>
+      </xsd:element>
+      <xsd:element
+        name="cor_customer_id"
+        type="xsd:int"
+        minOccurs="0"
+        maxOccurs="unbounded">
+        <xsd:keyref
+          name="keyref_cor2cst"
+          refer="cst_customer_id_key">
+          <xsd:selector xpath=".//tbl_customer_orders" />
+          <xsd:field xpath="cor_customer_id" />
+        </xsd:keyref>
+      </xsd:element>
+      <xsd:element
+        name="cor_customer_payment_method_id"
+        type="xsd:string"
+        minOccurs="0"
+        maxOccurs="unbounded" />
+
+
+      <xsd:element
+        name="cor_order_status_code"
+        type="xsd:string"
+        maxOccurs="unbounded" />
+      <xsd:element
+        name="cor_date_order_placed"
+        type="xsd:date"
+        maxOccurs="unbounded" />
+      <xsd:element
+        name="cor_date_order_paid"
+        type="xsd:date"
+        minOccurs="0"
+        maxOccurs="unbounded" />
+      <xsd:element
+        name="cor_der_total_order_price"
+        type="xsd:decimal"
+        maxOccurs="unbounded" />
+      <xsd:element
+        name="cor_other_order_details"
+        type="xsd:string"
+        minOccurs="0"
+        maxOccurs="unbounded" />
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <!-- CustomerOrderSearch (Response) -->
+
+  <xsd:element
+    name="customerOrderSearchResponse"
+    type="CustomerOrderSearchResponse" />
+
+  <xsd:complexType name="CustomerOrderSearchResponse">
+
+    <xsd:sequence>
+
+      <xsd:element
+        name="cor_order_id"
+        type="xsd:int" />
+
+      <xsd:element
+        name="cor_customer_id"
+        type="xsd:int"
+        minOccurs="0"
+        maxOccurs="unbounded" />
+
+      <xsd:element
+        name="cor_customer_payment_method_id"
+        type="xsd:string"
+        minOccurs="0"
+        maxOccurs="unbounded" />
+
+
+      <xsd:element
+        name="cor_order_status_code"
+        type="xsd:string"
+        maxOccurs="unbounded" />
+      <xsd:element
+        name="cor_date_order_placed"
+        type="xsd:date"
+        maxOccurs="unbounded" />
+      <xsd:element
+        name="cor_date_order_paid"
+        type="xsd:date"
+        minOccurs="0"
+        maxOccurs="unbounded" />
+      <xsd:element
+        name="cor_der_total_order_price"
+        type="xsd:decimal"
+        maxOccurs="unbounded" />
+      <xsd:element
+        name="cor_other_order_details"
+        type="xsd:string"
+        minOccurs="0"
+        maxOccurs="unbounded" />
+    </xsd:sequence>
+
+  </xsd:complexType>
+
+  <!-- ProductCreate (Request) -->
+
+  <xsd:element
+    name="productCreateRequest"
+    type="ProductCreateRequest" />
+
+  <xsd:complexType name="ProductCreateRequest">
+
+    <xsd:sequence>
+      <xsd:element
+        name="prd_product_id"
+        type="xsd:int"
+        maxOccurs="unbounded">
+        <xsd:key
+          id="prd_product_id_key"
+          name="prd_product_id_key">
+          <xsd:selector xpath=".//tbl_products" />
+          <xsd:field xpath="prd_product_id" />
+        </xsd:key>
+      </xsd:element>
+      <xsd:element
+        name="prd_product_type_code"
+        type="xsd:string"
+        maxOccurs="unbounded" />
+      <xsd:element
+        name="prd_supplier_code"
+        type="xsd:string"
+        maxOccurs="unbounded" />
+
+      <xsd:element
+        name="prd_product_price"
+        type="xsd:decimal"
+        maxOccurs="unbounded" />
+      <xsd:element
+        name="prd_book_isbn"
+        type="xsd:string"
+        maxOccurs="unbounded" />
+      <xsd:element
+        name="prd_book_author"
+        type="xsd:string"
+        maxOccurs="unbounded" />
+      <xsd:element
+        name="prd_book_publication_date"
+        type="xsd:date"
+        maxOccurs="unbounded" />
+      <xsd:element
+        name="prd_book_title"
+        type="xsd:string"
+        maxOccurs="unbounded" />
+      <xsd:element
+        name="prd_book_price"
+        type="xsd:decimal"
+        minOccurs="0"
+        maxOccurs="unbounded" />
+      <xsd:element
+        name="prd_other_product_details"
+        type="xsd:string"
+        minOccurs="0"
+        maxOccurs="unbounded" />
+    </xsd:sequence>
+
+  </xsd:complexType>
+
+  <!-- ProductCreate (Response) -->
+
+  <xsd:element
+    name="productCreateResponse"
+    type="ProductCreateResponse" />
+
+  <xsd:complexType name="ProductCreateResponse">
+
+    <xsd:sequence>
+
+      <xsd:element
+        name="prd_product_id"
+        type="xsd:int" />
+      <xsd:element
+        name="prd_product_type_code"
+        type="xsd:string"
+        maxOccurs="unbounded" />
+      <xsd:element
+        name="prd_supplier_code"
+        type="xsd:string"
+        maxOccurs="unbounded" />
+      <xsd:element
+        name="prd_product_price"
+        type="xsd:decimal"
+        maxOccurs="unbounded" />
+      <xsd:element
+        name="prd_book_isbn"
+        type="xsd:string"
+        maxOccurs="unbounded" />
+      <xsd:element
+        name="prd_book_author"
+        type="xsd:string"
+        maxOccurs="unbounded" />
+      <xsd:element
+        name="prd_book_publication_date"
+        type="xsd:date"
+        maxOccurs="unbounded" />
+      <xsd:element
+        name="prd_book_title"
+        type="xsd:string"
+        maxOccurs="unbounded" />
+      <xsd:element
+        name="prd_book_price"
+        type="xsd:decimal"
+        minOccurs="0"
+        maxOccurs="unbounded" />
+      <xsd:element
+        name="prd_other_product_details"
+        type="xsd:string"
+        minOccurs="0"
+        maxOccurs="unbounded" />
+        
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <!-- Product Update (Request) -->
+
+  <xsd:element
+    name="productUpdateRequest"
+    type="ProductUpdateRequest" />
+
+  <xsd:complexType name="ProductUpdateRequest">
+
+    <xsd:sequence>
+      <xsd:element
+        name="prd_product_id"
+        type="xsd:int"
+        maxOccurs="unbounded" />
+      <xsd:element
+        name="prd_product_type_code"
+        type="xsd:string"
+        maxOccurs="unbounded" />
+      <xsd:element
+        name="prd_supplier_code"
+        type="xsd:string"
+        maxOccurs="unbounded" />
+
+      <xsd:element
+        name="prd_product_price"
+        type="xsd:decimal"
+        maxOccurs="unbounded" />
+      <xsd:element
+        name="prd_book_isbn"
+        type="xsd:string"
+        maxOccurs="unbounded" />
+      <xsd:element
+        name="prd_book_author"
+        type="xsd:string"
+        maxOccurs="unbounded" />
+      <xsd:element
+        name="prd_book_publication_date"
+        type="xsd:date"
+        maxOccurs="unbounded" />
+      <xsd:element
+        name="prd_book_title"
+        type="xsd:string"
+        maxOccurs="unbounded" />
+      <xsd:element
+        name="prd_book_price"
+        type="xsd:decimal"
+        minOccurs="0"
+        maxOccurs="unbounded" />
+      <xsd:element
+        name="prd_other_product_details"
+        type="xsd:string"
+        minOccurs="0"
+        maxOccurs="unbounded" />
+    </xsd:sequence>
+
+  </xsd:complexType>
+
+  <!-- Product Update (Response) -->
+
+  <xsd:element
+    name="productUpdateResponse"
+    type="ProductUpdateResponse" />
+
+  <xsd:complexType name="ProductUpdateResponse">
+
+    <xsd:sequence>
+
+      <xsd:element
+        name="prd_product_id"
+        type="xsd:int" />
+
+      <xsd:element
+        name="prd_product_type_code"
+        type="xsd:string"
+        maxOccurs="unbounded" />
+      <xsd:element
+        name="prd_supplier_code"
+        type="xsd:string"
+        maxOccurs="unbounded" />
+
+      <xsd:element
+        name="prd_product_price"
+        type="xsd:decimal"
+        maxOccurs="unbounded" />
+      <xsd:element
+        name="prd_book_isbn"
+        type="xsd:string"
+        maxOccurs="unbounded" />
+      <xsd:element
+        name="prd_book_author"
+        type="xsd:string"
+        maxOccurs="unbounded" />
+      <xsd:element
+        name="prd_book_publication_date"
+        type="xsd:date"
+        maxOccurs="unbounded" />
+      <xsd:element
+        name="prd_book_title"
+        type="xsd:string"
+        maxOccurs="unbounded" />
+      <xsd:element
+        name="prd_book_price"
+        type="xsd:decimal"
+        minOccurs="0"
+        maxOccurs="unbounded" />
+      <xsd:element
+        name="prd_other_product_details"
+        type="xsd:string"
+        minOccurs="0"
+        maxOccurs="unbounded" />
+    </xsd:sequence>
+  </xsd:complexType>
+
+
+</xsd:schema>
