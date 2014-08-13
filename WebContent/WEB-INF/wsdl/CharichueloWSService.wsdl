@@ -24,6 +24,12 @@
   <message name="mthdProductCreateResponse">
     <part name="parameters" element="tns:mthdProductCreateResponse"/>
   </message>
+  <message name="mthdProductUpdate">
+    <part name="parameters" element="tns:mthdProductUpdate"/>
+  </message>
+  <message name="mthdProductUpdateResponse">
+    <part name="parameters" element="tns:mthdProductUpdateResponse"/>
+  </message>
   <portType name="CharichueloWS">
     <operation name="mthdCustomerSearch">
       <input wsam:Action="http://charichuelo/CharichueloWS/mthdCustomerSearchRequest" message="tns:mthdCustomerSearch"/>
@@ -36,6 +42,10 @@
     <operation name="mthdProductCreate">
       <input wsam:Action="http://charichuelo/CharichueloWS/mthdProductCreateRequest" message="tns:mthdProductCreate"/>
       <output wsam:Action="http://charichuelo/CharichueloWS/mthdProductCreateResponse" message="tns:mthdProductCreateResponse"/>
+    </operation>
+    <operation name="mthdProductUpdate">
+      <input wsam:Action="http://charichuelo/CharichueloWS/mthdProductUpdateRequest" message="tns:mthdProductUpdate"/>
+      <output wsam:Action="http://charichuelo/CharichueloWS/mthdProductUpdateResponse" message="tns:mthdProductUpdateResponse"/>
     </operation>
   </portType>
   <binding name="CharichueloWSPortBinding" type="tns:CharichueloWS">
@@ -59,6 +69,15 @@
       </output>
     </operation>
     <operation name="mthdProductCreate">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="mthdProductUpdate">
       <soap:operation soapAction=""/>
       <input>
         <soap:body use="literal"/>

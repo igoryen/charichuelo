@@ -13,6 +13,10 @@
 
   <xs:element name="mthdProductCreateResponse" type="tns:mthdProductCreateResponse"/>
 
+  <xs:element name="mthdProductUpdate" type="tns:mthdProductUpdate"/>
+
+  <xs:element name="mthdProductUpdateResponse" type="tns:mthdProductUpdateResponse"/>
+
   <xs:complexType name="mthdCustomerOrderSearch">
     <xs:sequence>
       <xs:element name="CustomerOrderSearchRequest" type="tns:CustomerOrderSearchRequest" minOccurs="0"/>
@@ -115,6 +119,48 @@
   </xs:complexType>
 
   <xs:complexType name="ProductCreateResponse">
+    <xs:sequence>
+      <xs:element name="prd_product_id" type="xs:int"/>
+      <xs:element name="prd_product_type_code" type="xs:string" maxOccurs="unbounded"/>
+      <xs:element name="prd_supplier_code" type="xs:string" maxOccurs="unbounded"/>
+      <xs:element name="prd_product_price" type="xs:decimal" maxOccurs="unbounded"/>
+      <xs:element name="prd_book_isbn" type="xs:string" maxOccurs="unbounded"/>
+      <xs:element name="prd_book_author" type="xs:string" maxOccurs="unbounded"/>
+      <xs:element name="prd_book_publication_date" type="xs:date" maxOccurs="unbounded"/>
+      <xs:element name="prd_book_title" type="xs:string" maxOccurs="unbounded"/>
+      <xs:element name="prd_book_price" type="xs:decimal" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="prd_other_product_details" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="mthdProductUpdate">
+    <xs:sequence>
+      <xs:element name="ProductUpdateRequest" type="tns:ProductUpdateRequest" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ProductUpdateRequest">
+    <xs:sequence>
+      <xs:element name="prd_product_id" type="xs:int" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="prd_product_type_code" type="xs:string" maxOccurs="unbounded"/>
+      <xs:element name="prd_supplier_code" type="xs:string" maxOccurs="unbounded"/>
+      <xs:element name="prd_product_price" type="xs:decimal" maxOccurs="unbounded"/>
+      <xs:element name="prd_book_isbn" type="xs:string" maxOccurs="unbounded"/>
+      <xs:element name="prd_book_author" type="xs:string" maxOccurs="unbounded"/>
+      <xs:element name="prd_book_publication_date" type="xs:date" maxOccurs="unbounded"/>
+      <xs:element name="prd_book_title" type="xs:string" maxOccurs="unbounded"/>
+      <xs:element name="prd_book_price" type="xs:decimal" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="prd_other_product_details" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="mthdProductUpdateResponse">
+    <xs:sequence>
+      <xs:element name="ProductUpdateResponse" type="tns:ProductUpdateResponse" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ProductUpdateResponse">
     <xs:sequence>
       <xs:element name="prd_product_id" type="xs:int"/>
       <xs:element name="prd_product_type_code" type="xs:string" maxOccurs="unbounded"/>
