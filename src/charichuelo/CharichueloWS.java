@@ -43,4 +43,15 @@ public class CharichueloWS {
     response.setPrdProductId(request.getPrdProductId());
     return response;
   }
+  
+//ProductUpdate()
+  
+ @WebMethod
+ @WebResult(name = "ProductUpdateResponse")
+ public ProductUpdateResponse mthdProductUpdate(@WebParam(name = "ProductUpdateRequest") ProductUpdateRequest request) {
+   ProductUpdateResponse response = objFactory.createProductUpdateResponse();
+   response.setPrdProductId(request.getPrdProductId());
+   return response;
+ }
+  
 }
