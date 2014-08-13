@@ -6,21 +6,40 @@
       <xsd:import namespace="http://charichuelo/" schemaLocation="CharichueloWSService_schema1.xsd"/>
     </xsd:schema>
   </types>
-  <message name="aaa">
-    <part name="parameters" element="tns:aaa"/>
+  <message name="mthdCustomerSearch">
+    <part name="parameters" element="tns:mthdCustomerSearch"/>
   </message>
-  <message name="aaaResponse">
-    <part name="parameters" element="tns:aaaResponse"/>
+  <message name="mthdCustomerSearchResponse">
+    <part name="parameters" element="tns:mthdCustomerSearchResponse"/>
+  </message>
+  <message name="mthdCustomerOrderSearch">
+    <part name="parameters" element="tns:mthdCustomerOrderSearch"/>
+  </message>
+  <message name="mthdCustomerOrderSearchResponse">
+    <part name="parameters" element="tns:mthdCustomerOrderSearchResponse"/>
   </message>
   <portType name="CharichueloWS">
-    <operation name="aaa">
-      <input wsam:Action="http://charichuelo/CharichueloWS/aaaRequest" message="tns:aaa"/>
-      <output wsam:Action="http://charichuelo/CharichueloWS/aaaResponse" message="tns:aaaResponse"/>
+    <operation name="mthdCustomerSearch">
+      <input wsam:Action="http://charichuelo/CharichueloWS/mthdCustomerSearchRequest" message="tns:mthdCustomerSearch"/>
+      <output wsam:Action="http://charichuelo/CharichueloWS/mthdCustomerSearchResponse" message="tns:mthdCustomerSearchResponse"/>
+    </operation>
+    <operation name="mthdCustomerOrderSearch">
+      <input wsam:Action="http://charichuelo/CharichueloWS/mthdCustomerOrderSearchRequest" message="tns:mthdCustomerOrderSearch"/>
+      <output wsam:Action="http://charichuelo/CharichueloWS/mthdCustomerOrderSearchResponse" message="tns:mthdCustomerOrderSearchResponse"/>
     </operation>
   </portType>
   <binding name="CharichueloWSPortBinding" type="tns:CharichueloWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-    <operation name="aaa">
+    <operation name="mthdCustomerSearch">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="mthdCustomerOrderSearch">
       <soap:operation soapAction=""/>
       <input>
         <soap:body use="literal"/>

@@ -1,11 +1,53 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <xs:schema version="1.0" targetNamespace="http://charichuelo/" xmlns:tns="http://charichuelo/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
-  <xs:element name="aaa" type="tns:aaa"/>
+  <xs:element name="mthdCustomerOrderSearch" type="tns:mthdCustomerOrderSearch"/>
 
-  <xs:element name="aaaResponse" type="tns:aaaResponse"/>
+  <xs:element name="mthdCustomerOrderSearchResponse" type="tns:mthdCustomerOrderSearchResponse"/>
 
-  <xs:complexType name="aaa">
+  <xs:element name="mthdCustomerSearch" type="tns:mthdCustomerSearch"/>
+
+  <xs:element name="mthdCustomerSearchResponse" type="tns:mthdCustomerSearchResponse"/>
+
+  <xs:complexType name="mthdCustomerOrderSearch">
+    <xs:sequence>
+      <xs:element name="CustomerOrderSearchRequest" type="tns:CustomerOrderSearchRequest" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="CustomerOrderSearchRequest">
+    <xs:sequence>
+      <xs:element name="cor_order_id" type="xs:int" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="cor_customer_id" type="xs:int" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="cor_customer_payment_method_id" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="cor_order_status_code" type="xs:string" maxOccurs="unbounded"/>
+      <xs:element name="cor_date_order_placed" type="xs:date" maxOccurs="unbounded"/>
+      <xs:element name="cor_date_order_paid" type="xs:date" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="cor_der_total_order_price" type="xs:decimal" maxOccurs="unbounded"/>
+      <xs:element name="cor_other_order_details" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="mthdCustomerOrderSearchResponse">
+    <xs:sequence>
+      <xs:element name="CustomerOrderSearchResponse" type="tns:CustomerOrderSearchResponse" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="CustomerOrderSearchResponse">
+    <xs:sequence>
+      <xs:element name="cor_order_id" type="xs:int"/>
+      <xs:element name="cor_customer_id" type="xs:int" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="cor_customer_payment_method_id" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="cor_order_status_code" type="xs:string" maxOccurs="unbounded"/>
+      <xs:element name="cor_date_order_placed" type="xs:date" maxOccurs="unbounded"/>
+      <xs:element name="cor_date_order_paid" type="xs:date" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="cor_der_total_order_price" type="xs:decimal" maxOccurs="unbounded"/>
+      <xs:element name="cor_other_order_details" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="mthdCustomerSearch">
     <xs:sequence>
       <xs:element name="CustomerSearchRequest" type="tns:CustomerSearchRequest" minOccurs="0"/>
     </xs:sequence>
@@ -23,7 +65,7 @@
     </xs:sequence>
   </xs:complexType>
 
-  <xs:complexType name="aaaResponse">
+  <xs:complexType name="mthdCustomerSearchResponse">
     <xs:sequence>
       <xs:element name="CustomerSearchResponse" type="tns:CustomerSearchResponse" minOccurs="0"/>
     </xs:sequence>
