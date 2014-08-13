@@ -141,7 +141,7 @@
 
   <xs:complexType name="ProductUpdateRequest">
     <xs:sequence>
-      <xs:element name="prd_product_id" type="xs:int" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="prd_product_id" type="xs:int"/>
       <xs:element name="prd_product_type_code" type="xs:string" maxOccurs="unbounded"/>
       <xs:element name="prd_supplier_code" type="xs:string" maxOccurs="unbounded"/>
       <xs:element name="prd_product_price" type="xs:decimal" maxOccurs="unbounded"/>
