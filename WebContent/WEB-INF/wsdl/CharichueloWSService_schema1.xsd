@@ -17,7 +17,7 @@
 
   <xs:complexType name="CustomerOrderSearchRequest">
     <xs:sequence>
-      <xs:element name="cor_order_id" type="xs:int" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="cor_order_id" type="xs:int"/>
       <xs:element name="cor_customer_id" type="xs:int" minOccurs="0" maxOccurs="unbounded"/>
       <xs:element name="cor_customer_payment_method_id" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
       <xs:element name="cor_order_status_code" type="xs:string" maxOccurs="unbounded"/>
