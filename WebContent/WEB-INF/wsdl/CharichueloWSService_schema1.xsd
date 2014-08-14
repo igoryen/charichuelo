@@ -26,13 +26,13 @@
   <xs:complexType name="CustomerOrderSearchRequest">
     <xs:sequence>
       <xs:element name="cor_order_id" type="xs:int"/>
-      <xs:element name="cor_customer_id" type="xs:int" minOccurs="0" maxOccurs="unbounded"/>
-      <xs:element name="cor_customer_payment_method_id" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
-      <xs:element name="cor_order_status_code" type="xs:string" maxOccurs="unbounded"/>
-      <xs:element name="cor_date_order_placed" type="xs:date" maxOccurs="unbounded"/>
-      <xs:element name="cor_date_order_paid" type="xs:date" minOccurs="0" maxOccurs="unbounded"/>
-      <xs:element name="cor_der_total_order_price" type="xs:decimal" maxOccurs="unbounded"/>
-      <xs:element name="cor_other_order_details" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="cor_customer_id" type="xs:int"/>
+      <xs:element name="cor_customer_payment_method_id" type="xs:string"/>
+      <xs:element name="cor_order_status_code" type="xs:string"/>
+      <xs:element name="cor_date_order_placed" type="xs:date"/>
+      <xs:element name="cor_date_order_paid" type="xs:date"/>
+      <xs:element name="cor_der_total_order_price" type="xs:decimal"/>
+      <xs:element name="cor_other_order_details" type="xs:string"/>
     </xs:sequence>
   </xs:complexType>
 
@@ -45,13 +45,13 @@
   <xs:complexType name="CustomerOrderSearchResponse">
     <xs:sequence>
       <xs:element name="cor_order_id" type="xs:int"/>
-      <xs:element name="cor_customer_id" type="xs:int" minOccurs="0" maxOccurs="unbounded"/>
-      <xs:element name="cor_customer_payment_method_id" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
-      <xs:element name="cor_order_status_code" type="xs:string" maxOccurs="unbounded"/>
-      <xs:element name="cor_date_order_placed" type="xs:date" maxOccurs="unbounded"/>
-      <xs:element name="cor_date_order_paid" type="xs:date" minOccurs="0" maxOccurs="unbounded"/>
-      <xs:element name="cor_der_total_order_price" type="xs:decimal" maxOccurs="unbounded"/>
-      <xs:element name="cor_other_order_details" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="cor_customer_id" type="xs:int"/>
+      <xs:element name="cor_customer_payment_method_id" type="xs:string"/>
+      <xs:element name="cor_order_status_code" type="xs:string"/>
+      <xs:element name="cor_date_order_placed" type="xs:date"/>
+      <xs:element name="cor_date_order_paid" type="xs:date"/>
+      <xs:element name="cor_der_total_order_price" type="xs:decimal"/>
+      <xs:element name="cor_other_order_details" type="xs:string"/>
     </xs:sequence>
   </xs:complexType>
 
