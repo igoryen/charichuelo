@@ -332,7 +332,6 @@
       <xsd:element
         name="prd_product_id"
         type="xsd:int" />
-
       <xsd:element
         name="prd_product_type_code"
         type="xsd:string" />
