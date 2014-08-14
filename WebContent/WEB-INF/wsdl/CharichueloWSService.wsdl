@@ -6,12 +6,6 @@
       <xsd:import namespace="http://charichuelo/" schemaLocation="CharichueloWSService_schema1.xsd"/>
     </xsd:schema>
   </types>
-  <message name="mthdCustomerSearch">
-    <part name="parameters" element="tns:mthdCustomerSearch"/>
-  </message>
-  <message name="mthdCustomerSearchResponse">
-    <part name="parameters" element="tns:mthdCustomerSearchResponse"/>
-  </message>
   <message name="mthdCustomerOrderSearch">
     <part name="parameters" element="tns:mthdCustomerOrderSearch"/>
   </message>
@@ -30,11 +24,13 @@
   <message name="mthdProductUpdateResponse">
     <part name="parameters" element="tns:mthdProductUpdateResponse"/>
   </message>
+  <message name="mthdCustomerSearch">
+    <part name="parameters" element="tns:mthdCustomerSearch"/>
+  </message>
+  <message name="mthdCustomerSearchResponse">
+    <part name="parameters" element="tns:mthdCustomerSearchResponse"/>
+  </message>
   <portType name="CharichueloWS">
-    <operation name="mthdCustomerSearch">
-      <input wsam:Action="http://charichuelo/CharichueloWS/mthdCustomerSearchRequest" message="tns:mthdCustomerSearch"/>
-      <output wsam:Action="http://charichuelo/CharichueloWS/mthdCustomerSearchResponse" message="tns:mthdCustomerSearchResponse"/>
-    </operation>
     <operation name="mthdCustomerOrderSearch">
       <input wsam:Action="http://charichuelo/CharichueloWS/mthdCustomerOrderSearchRequest" message="tns:mthdCustomerOrderSearch"/>
       <output wsam:Action="http://charichuelo/CharichueloWS/mthdCustomerOrderSearchResponse" message="tns:mthdCustomerOrderSearchResponse"/>
@@ -47,18 +43,13 @@
       <input wsam:Action="http://charichuelo/CharichueloWS/mthdProductUpdateRequest" message="tns:mthdProductUpdate"/>
       <output wsam:Action="http://charichuelo/CharichueloWS/mthdProductUpdateResponse" message="tns:mthdProductUpdateResponse"/>
     </operation>
+    <operation name="mthdCustomerSearch">
+      <input wsam:Action="http://charichuelo/CharichueloWS/mthdCustomerSearchRequest" message="tns:mthdCustomerSearch"/>
+      <output wsam:Action="http://charichuelo/CharichueloWS/mthdCustomerSearchResponse" message="tns:mthdCustomerSearchResponse"/>
+    </operation>
   </portType>
   <binding name="CharichueloWSPortBinding" type="tns:CharichueloWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-    <operation name="mthdCustomerSearch">
-      <soap:operation soapAction=""/>
-      <input>
-        <soap:body use="literal"/>
-      </input>
-      <output>
-        <soap:body use="literal"/>
-      </output>
-    </operation>
     <operation name="mthdCustomerOrderSearch">
       <soap:operation soapAction=""/>
       <input>
@@ -78,6 +69,15 @@
       </output>
     </operation>
     <operation name="mthdProductUpdate">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="mthdCustomerSearch">
       <soap:operation soapAction=""/>
       <input>
         <soap:body use="literal"/>
