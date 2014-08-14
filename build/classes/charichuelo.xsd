@@ -30,37 +30,27 @@
 
       <xsd:element
         name="cst_first_name"
-        type="xsd:string"
-        maxOccurs="unbounded" />
+        type="xsd:string"/>
 
       <xsd:element
         name="cst_middle_name"
-        type="xsd:string"
-        minOccurs="0"
-        maxOccurs="unbounded" />
+        type="xsd:string"/>
 
       <xsd:element
         name="cst_last_name"
-        type="xsd:string"
-        maxOccurs="unbounded" />
+        type="xsd:string"/>
 
       <xsd:element
         name="cst_customer_phone"
-        type="xsd:string"
-        minOccurs="0"
-        maxOccurs="unbounded" />
+        type="xsd:string" />
 
       <xsd:element
         name="cst_customer_email"
-        type="xsd:string"
-        minOccurs="0"
-        maxOccurs="unbounded" />
+        type="xsd:string" />
 
       <xsd:element
         name="cst_other_customer_details"
-        type="xsd:string"
-        minOccurs="0"
-        maxOccurs="unbounded" />
+        type="xsd:string" />
 
     </xsd:sequence>
 

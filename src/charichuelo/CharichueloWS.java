@@ -14,6 +14,7 @@ import javax.jws.soap.SOAPBinding;
 public class CharichueloWS {
   
   ObjectFactory objFactory = new ObjectFactory();
+  
   // CustomerSearch()
   
   @WebMethod
@@ -21,6 +22,12 @@ public class CharichueloWS {
   public CustomerSearchResponse mthdCustomerSearch(@WebParam(name = "CustomerSearchRequest") CustomerSearchRequest request) {
     CustomerSearchResponse response = objFactory.createCustomerSearchResponse();
     response.setCstCustomerId(request.getCstCustomerId());
+    response.setCstFirstName(request.getCstFirstName());
+    response.setCstMiddleName(request.getCstMiddleName());
+    response.setCstLastName(request.getCstLastName());
+    response.setCstCustomerPhone(request.getCstCustomerPhone());
+    response.setCstCustomerEmail(request.getCstCustomerEmail());
+    response.setCstOtherCustomerDetails(request.getCstOtherCustomerDetails());
     return response;
   }
   
