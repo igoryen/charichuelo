@@ -64,12 +64,12 @@
   <xs:complexType name="CustomerSearchRequest">
     <xs:sequence>
       <xs:element name="cst_customer_id" type="xs:int"/>
-      <xs:element name="cst_first_name" type="xs:string" maxOccurs="unbounded"/>
-      <xs:element name="cst_middle_name" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
-      <xs:element name="cst_last_name" type="xs:string" maxOccurs="unbounded"/>
-      <xs:element name="cst_customer_phone" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
-      <xs:element name="cst_customer_email" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
-      <xs:element name="cst_other_customer_details" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="cst_first_name" type="xs:string"/>
+      <xs:element name="cst_middle_name" type="xs:string"/>
+      <xs:element name="cst_last_name" type="xs:string"/>
+      <xs:element name="cst_customer_phone" type="xs:string"/>
+      <xs:element name="cst_customer_email" type="xs:string"/>
+      <xs:element name="cst_other_customer_details" type="xs:string"/>
     </xs:sequence>
   </xs:complexType>
 
