@@ -290,43 +290,31 @@
         type="xsd:int" />
       <xsd:element
         name="prd_product_type_code"
-        type="xsd:string"
-        maxOccurs="unbounded" />
+        type="xsd:string"/>
       <xsd:element
         name="prd_supplier_code"
-        type="xsd:string"
-        maxOccurs="unbounded" />
-
+        type="xsd:string" />
       <xsd:element
         name="prd_product_price"
-        type="xsd:decimal"
-        maxOccurs="unbounded" />
+        type="xsd:decimal"/>
       <xsd:element
         name="prd_book_isbn"
-        type="xsd:string"
-        maxOccurs="unbounded" />
+        type="xsd:string" />
       <xsd:element
         name="prd_book_author"
-        type="xsd:string"
-        maxOccurs="unbounded" />
+        type="xsd:string"/>
       <xsd:element
         name="prd_book_publication_date"
-        type="xsd:date"
-        maxOccurs="unbounded" />
+        type="xsd:date" />
       <xsd:element
         name="prd_book_title"
-        type="xsd:string"
-        maxOccurs="unbounded" />
+        type="xsd:string"/>
       <xsd:element
         name="prd_book_price"
-        type="xsd:decimal"
-        minOccurs="0"
-        maxOccurs="unbounded" />
+        type="xsd:decimal" />
       <xsd:element
         name="prd_other_product_details"
-        type="xsd:string"
-        minOccurs="0"
-        maxOccurs="unbounded" />
+        type="xsd:string" />
     </xsd:sequence>
 
   </xsd:complexType>
@@ -347,43 +335,31 @@
 
       <xsd:element
         name="prd_product_type_code"
-        type="xsd:string"
-        maxOccurs="unbounded" />
+        type="xsd:string" />
       <xsd:element
         name="prd_supplier_code"
-        type="xsd:string"
-        maxOccurs="unbounded" />
-
+        type="xsd:string"/>
       <xsd:element
         name="prd_product_price"
-        type="xsd:decimal"
-        maxOccurs="unbounded" />
+        type="xsd:decimal" />
       <xsd:element
         name="prd_book_isbn"
-        type="xsd:string"
-        maxOccurs="unbounded" />
+        type="xsd:string" />
       <xsd:element
         name="prd_book_author"
-        type="xsd:string"
-        maxOccurs="unbounded" />
+        type="xsd:string" />
       <xsd:element
         name="prd_book_publication_date"
-        type="xsd:date"
-        maxOccurs="unbounded" />
+        type="xsd:date"/>
       <xsd:element
         name="prd_book_title"
-        type="xsd:string"
-        maxOccurs="unbounded" />
+        type="xsd:string"/>
       <xsd:element
         name="prd_book_price"
-        type="xsd:decimal"
-        minOccurs="0"
-        maxOccurs="unbounded" />
+        type="xsd:decimal" />
       <xsd:element
         name="prd_other_product_details"
-        type="xsd:string"
-        minOccurs="0"
-        maxOccurs="unbounded" />
+        type="xsd:string" />
     </xsd:sequence>
   </xsd:complexType>
 
