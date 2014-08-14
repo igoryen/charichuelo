@@ -113,9 +113,7 @@
       
       <xsd:element
         name="cor_customer_id"
-        type="xsd:int"
-        minOccurs="0"
-        maxOccurs="unbounded">
+        type="xsd:int">
         <xsd:keyref
           name="keyref_cor2cst"
           refer="cst_customer_id_key">
@@ -125,33 +123,22 @@
       </xsd:element>
       <xsd:element
         name="cor_customer_payment_method_id"
-        type="xsd:string"
-        minOccurs="0"
-        maxOccurs="unbounded" />
-
-
+        type="xsd:string" />
       <xsd:element
         name="cor_order_status_code"
-        type="xsd:string"
-        maxOccurs="unbounded" />
+        type="xsd:string" />
       <xsd:element
         name="cor_date_order_placed"
-        type="xsd:date"
-        maxOccurs="unbounded" />
+        type="xsd:date"/>
       <xsd:element
         name="cor_date_order_paid"
-        type="xsd:date"
-        minOccurs="0"
-        maxOccurs="unbounded" />
+        type="xsd:date" />
       <xsd:element
         name="cor_der_total_order_price"
-        type="xsd:decimal"
-        maxOccurs="unbounded" />
+        type="xsd:decimal" />
       <xsd:element
         name="cor_other_order_details"
-        type="xsd:string"
-        minOccurs="0"
-        maxOccurs="unbounded" />
+        type="xsd:string" />
     </xsd:sequence>
   </xsd:complexType>
 
@@ -168,42 +155,28 @@
       <xsd:element
         name="cor_order_id"
         type="xsd:int" />
-
       <xsd:element
         name="cor_customer_id"
-        type="xsd:int"
-        minOccurs="0"
-        maxOccurs="unbounded" />
-
+        type="xsd:int" />
       <xsd:element
         name="cor_customer_payment_method_id"
-        type="xsd:string"
-        minOccurs="0"
-        maxOccurs="unbounded" />
-
-
+        type="xsd:string" />
       <xsd:element
         name="cor_order_status_code"
-        type="xsd:string"
-        maxOccurs="unbounded" />
+        type="xsd:string"/>
       <xsd:element
         name="cor_date_order_placed"
-        type="xsd:date"
-        maxOccurs="unbounded" />
+        type="xsd:date"/>
       <xsd:element
         name="cor_date_order_paid"
-        type="xsd:date"
-        minOccurs="0"
-        maxOccurs="unbounded" />
+        type="xsd:date" />
       <xsd:element
         name="cor_der_total_order_price"
-        type="xsd:decimal"
-        maxOccurs="unbounded" />
+        type="xsd:decimal" />
       <xsd:element
         name="cor_other_order_details"
-        type="xsd:string"
-        minOccurs="0"
-        maxOccurs="unbounded" />
+        type="xsd:string" />
+        
     </xsd:sequence>
 
   </xsd:complexType>
