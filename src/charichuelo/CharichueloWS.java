@@ -38,6 +38,13 @@ public class CharichueloWS {
   public CustomerOrderSearchResponse mthdCustomerOrderSearch(@WebParam(name = "CustomerOrderSearchRequest") CustomerOrderSearchRequest request) {
     CustomerOrderSearchResponse response = objFactory.createCustomerOrderSearchResponse();
     response.setCorOrderId(request.getCorOrderId());
+    response.setCorCustomerId(request.getCorCustomerId());
+    response.setCorCustomerPaymentMethodId(request.getCorCustomerPaymentMethodId());
+    response.setCorOrderStatusCode(request.getCorOrderStatusCode());
+    response.setCorDateOrderPlaced(request.getCorDateOrderPlaced());
+    response.setCorDateOrderPaid(request.getCorDateOrderPaid());
+    response.setCorDerTotalOrderPrice(request.getCorDerTotalOrderPrice());
+    response.setCorOtherOrderDetails(request.getCorOtherOrderDetails());
     return response;
   }
   
