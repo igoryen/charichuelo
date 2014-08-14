@@ -55,6 +55,14 @@ public class CharichueloWS {
   public ProductCreateResponse mthdProductCreate(@WebParam(name = "ProductCreateRequest") ProductCreateRequest request) {
     ProductCreateResponse response = objFactory.createProductCreateResponse();
     response.setPrdProductId(request.getPrdProductId());
+    response.setPrdProductTypeCode(request.getPrdProductTypeCode());
+    response.setPrdProductPrice(request.getPrdProductPrice());
+    response.setPrdBookIsbn(request.getPrdBookIsbn());
+    response.setPrdBookAuthor(request.getPrdBookAuthor());
+    response.setPrdBookPublicationDate(request.getPrdBookPublicationDate());
+    response.setPrdBookTitle(request.getPrdBookTitle());
+    response.setPrdBookPrice(request.getPrdBookPrice());
+    response.setPrdOtherProductDetails(request.getPrdOtherProductDetails());
     return response;
   }
   
